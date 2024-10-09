@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { env } = require('process');
 
 const app = express();
-const port = env.PORT||3000;
+const port = env.PORT || 3000;
+
+// Enable CORS from all origins
+app.use(cors());
 
 // MongoDB connection
 const dbURI = 'mongodb+srv://shreyashnalawade01:foxiscoming@cluster0.gwv0pja.mongodb.net/sensor_data?retryWrites=true&w=majority&appName=Cluster0';
